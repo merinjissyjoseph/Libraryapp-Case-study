@@ -1,0 +1,20 @@
+body {
+    background: #e71b1b;
+    
+  }
+  
+  .form-box {
+    max-width: 200px;
+    margin: auto;
+    padding: 50px;
+    background: #ffffff;
+    border: 10px solid #c40808;
+  }
+  
+  h1, p {
+    text-align: center;
+  }
+  
+  input, textarea {
+    width: 100%;
+  }

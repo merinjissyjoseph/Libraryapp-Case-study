@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="image-container">
+     
+     <div class="container  mt-5">
+        
+        <h1>Add new Book</h1>
+        <div>
+        <form action="/books" method="post">
+            <div class="form-group">
+                
+                <input type="hidden" name="id1"   value=<%=id%>  >
+                
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" name="title" placeholder="name of the book"  class="form-control" id="title1" >
+                
+            </div>
+            <div class="form-group">
+                <label for="exampleInputauthor">Author</label>
+                <input type="text" name="author"  placeholder="author"  class="form-control" id="author1" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputgenre">genre</label>
+                <input type="text" name="genre"  placeholder="genre"  class="form-control" id="genre1" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputgenre">Image</label>
+                <input type="file"  name="image"  accept="image/png, image/jpeg" id = "image1">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Add to repository</button>
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+</html>
