@@ -3,6 +3,7 @@ const app = express();
 // const Authordata=require('../model/authordata');
 const Authordata=require('../model/authordata');
 const authorsRouter=express.Router();
+let alert = require('alert'); 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
 
@@ -39,7 +40,7 @@ authorsRouter.get('/:id/update', function(req,res) {
     Authordata.findOne({_id:id})
     .then(function(author){
 
-        res.render("newauthor",{
+        res.render("updateauthor",{
                     id:author._id,
                     name: author.name,
                     description:author.description,
@@ -49,10 +50,11 @@ authorsRouter.get('/:id/update', function(req,res) {
   
   });
 //   update author
-authorsRouter.post('/', function(req,res) { 
-    // res.send("inside author post");
+authorsRouter.post('/:id/update', function(req,res) { 
+   
     var data = req.body;
-    if (data.id1!=null) {
+    alert("Author updated !!");
+    
         Authordata.updateOne(
             {_id:data.id},
             {
@@ -62,12 +64,12 @@ authorsRouter.post('/', function(req,res) {
                     image:data.image
                 }
             }
-        )  
+        )
         .then (res.redirect('/authors')) 
         .catch(error =>console.log(error))     
            
  
-        }
+        
 
 
   });

@@ -16,33 +16,33 @@
      
      <div class="container  mt-5">
         
-        <h1>Add new Book</h1>
+        <h1>Update Book</h1>
         <div>
-        <form action="/books" method="post">
-            <div class="form-group">
+        <form action="/books/<%=id%>/update" method="post">
+            <div class="form-group row">
                 
                 <input type="hidden" name="id1"   value=<%=id%>  >
                 
             </div>
-            <div class="form-group">
+            <div class="form-group row">
                 <label for="exampleInputEmail1">Title</label>
                 <input type="text" name="title" placeholder="name of the book" value=<%=title%> class="form-control" id="title1" >
                 
             </div>
-            <div class="form-group">
+            <div class="form-group row">
                 <label for="exampleInputauthor">Author</label>
                 <input type="text" name="author"  placeholder="author" value=<%=author%> class="form-control" id="author1" >
             </div>
-            <div class="form-group">
+            <div class="form-group row">
                 <label for="exampleInputgenre">genre</label>
                 <input type="text" name="genre"  placeholder="genre" value=<%=genre%> class="form-control" id="genre1" >
             </div>
-            <div class="form-group">
+            <div class="form-group row">
                 <label for="exampleInputgenre">Image</label>
                 <input type="file"  name="image" value=<%=image%> accept="image/png, image/jpeg" id = "image1">
             </div>
             
-            <button type="submit" class="btn btn-primary">Add to repository</button>
+            <button type="submit" class="btn btn-primary">Update repository</button>
         </form>
     </div>
     </div>

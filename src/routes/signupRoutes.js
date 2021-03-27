@@ -49,7 +49,7 @@ signupRouter.post('/', function (req, res) {
             // var ptrn=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
             var ptrn = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
             if (data.password.match(ptrn)){
-              alert("password pattern correct");
+              alert("User successfully registered ");
               var user=Userdata(newuser);
               user.save();//saving to database
               res.redirect('/login');

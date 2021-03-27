@@ -8,14 +8,14 @@ const port=process.env.port||3000;
 // app.use(bodyParser.json())
 const nav1= [
     {link:'/signup',name:'Signup'},
-    {link:'/login',name:'Login'},
-    {link:'/guest',name:'Guest Login'}
+    {link:'/login',name:'Login'}
 ]
 const nav= [
     {link:'/books',name:'Books'},
     {link:'/authors',name:'Authors'},
     {link:'/newbook',name:'Add new Book'},
-    {link:'/newauthor',name:'Add new Author'}
+    {link:'/newauthor',name:'Add new Author'},
+    {link:'/logout',name:'Logout'}
 ];
 const nav2= [
     {link:'/books',name:'Books'},
@@ -57,9 +57,9 @@ app.get('/home',function(req,res){
          title:"Library"
     }); //render to pass data as object
 });
-app.get('/guest',function(req,res){
-    res.render("guest",{
-        nav2, 
+app.get('/logout',function(req,res){
+    res.render("index",{
+        nav1, 
         title: "Library"
     });
 

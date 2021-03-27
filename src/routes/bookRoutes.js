@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
+let alert = require('alert'); 
 const Bookdata=require('../model/bookdata');
 const booksRouter=express.Router();
 
@@ -40,7 +41,7 @@ booksRouter.get('/:id/update', function(req,res) {
     Bookdata.findOne({_id:id})
     .then(function(book){
 
-        res.render("addnewbook",{
+        res.render("updatebook",{
                     id:book._id,
                     title: book.title,
                     author:book.author,
@@ -54,15 +55,15 @@ booksRouter.get('/:id/update', function(req,res) {
   //   update book
  booksRouter.post('/:id/update', function(req,res) { 
     const id=req.params.id;
-    // res.send("inside author post");
+    alert("inside book update", id);
     var data = req.body;
-    console.log(data.id1)
+    console.log(data.name)
     
         Bookdata.updateOne(
-            {_id:data.id},
+            {_id:data.id1},
             {
                 $set:{
-                    title:data.name,
+                    title:data.title,
                     author:data.author,
                     genre:data.genre,
                     image:data.image
